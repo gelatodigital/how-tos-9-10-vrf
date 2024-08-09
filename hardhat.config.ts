@@ -44,28 +44,40 @@ const config: HardhatUserConfig = {
       chainId: 94204209,
       url: `https://rpc.polygon-blackberry.gelato.digital`,
     },
-
     blastSepolia: {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
       chainId: 2131256,
       url: `https://sepolia.blast.io`,
     },
-
     ethsepolia: {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
       chainId: 11155111,
-      url: `https://eth-sepolia.g.alchemy.com/v2/tdlRFhX6HRYC-q7paO9WNc3NpIIRetC3`,
+      url: `https://eth-sepolia.g.alchemy.com/v2/<your-api-key>`,
+    },
+    berachain: {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
+      chainId: 80084,
+      url: `https://bartio.rpc.berachain.com/`,
     },
 
     matic: {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
       chainId: 137,
-      url: `https://polygon-mainnet.g.alchemy.com/v2/KmPNhPyvGUUNah6nRGDCCLDSo8pMPNuq`,
+      url: `https://polygon-mainnet.g.alchemy.com/v2/<your-api-key>`,
+    },
+    amoy: {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
+      chainId: 80002,
+      url: `https://polygon-amoy.g.alchemy.com/v2/<your-api-key>`,
     },
   },
   etherscan: {
     apiKey: {
       blueberry: "xxx",
+      raspberry: "xxx",
+      blackberry: "xxx",
+      berachain: "xxx",
+      polygon: "yourApiKey",
     },
     customChains: [
       {
@@ -74,6 +86,23 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://arb-blueberry.gelatoscout.com/api",
           browserURL: "https://arb-blueberry.gelatoscout.com",
+        },
+      },
+      {
+        network: "raspberry",
+        chainId: 123420111,
+        urls: {
+          apiURL: "https://opcelestia-raspberry.gelatoscout.com/api",
+          browserURL: "https://opcelestia-raspberry.gelatoscout.com",
+        },
+      },
+      {
+        network: "berachain",
+        chainId: 80084,
+        urls: {
+          apiURL:
+            "https://api.routescan.io/v2/network/testnet/evm/80084/etherscan/api/",
+          browserURL: "https://bartio.beratrail.io/",
         },
       },
     ],
